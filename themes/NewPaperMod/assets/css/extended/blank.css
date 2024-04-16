@@ -1,0 +1,18 @@
+/*
+This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
+
+Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
+*/
+
+pre,
+code {
+    font-family: "Cascadia Code", "LXGW WenKai Screen", monospace;
+}
+
+body {
+    font-family: "Cascadia Code", "LXGW WenKai Screen", "SF Pro SC", "PingFang SC", "Source Han Sans CN", "Microsoft Yahei", sans-serif;
+}
+
+.post-content img {
+    margin: 1rem auto;
+}
