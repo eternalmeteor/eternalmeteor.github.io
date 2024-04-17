@@ -1,6 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://example.org/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Apr 2024 20:48:20 +0800</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows中使用hugo和Github Pages搭建个人博客（二）</title><link>https://example.org/posts/blog01/</link><pubDate>Mon, 15 Apr 2024 20:48:20 +0800</pubDate><guid>https://example.org/posts/blog01/</guid><description>[toc]
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ExampleSite</title>
+    <link>https://examplesite.com/</link>
+    <description>Recent content on ExampleSite</description>
+    <image>
+      <title>ExampleSite</title>
+      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.124.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Apr 2024 20:48:20 +0800</lastBuildDate>
+    <atom:link href="https://examplesite.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中使用hugo和Github Pages搭建个人博客（二）</title>
+      <link>https://examplesite.com/posts/blog01/</link>
+      <pubDate>Mon, 15 Apr 2024 20:48:20 +0800</pubDate>
+      <guid>https://examplesite.com/posts/blog01/</guid>
+      <description>[toc]
 1.建立GitHub远程仓库 登录至自己的GitHub账号，建立GitHub Page仓库。 注意：这里的GitHub page的命名格式必须为username.github.io,其中username为GitHub的用户名，即就是Repository name前面的Owner名。
 勾选public，将仓库设置为公开仓库。 勾选Add a README file，设置main分支为仓库的默认主分支。 2.将本地仓库和远程仓库相关联 在菜单栏中搜索git bash并打开。 进入至本地仓库目录下，例如我的本地仓库目录为：d:/quickstart 在quickStart目录下运行git init命令，初始化本地仓库为git仓库 git init 将本地仓库和远程仓库（自己创建的.github.io仓库）相关联。 git remote add origin url (url代表远程仓库的url) 将本地仓库中的内容推送至远程仓库。 注意1：本文档采用同一个远程仓库的两个分支进行hugo仓库的自动部署。设置远程仓库中的source分支为本地仓库的内容，main分支代表要发布的静态网页。
 注意2：git add .之后在Windows平台会出现warning: LF will be replaced by CRLF in .gitmodules. The file will have its original line endings in your working directory，查阅资料之后发现是不同平台下空格表示方式不同，可以不用管。
 注意3：git push时需要本地分支名，本地分支名会显示在git bash界面中当前目录的后面，注意看自己的分支名。
-git add . #将本地修改添加至暂存区 git commit -m &amp;#39;注释&amp;#39; #将本地修改从暂存区移动到本地分支 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 3.</description></item><item><title>My First Post</title><link>https://example.org/posts/my-first-post/</link><pubDate>Mon, 15 Apr 2024 15:39:44 +0800</pubDate><guid>https://example.org/posts/my-first-post/</guid><description>## Introduction This is bold text, and this is emphasized text. Visit the Hugo website!</description></item></channel></rss>
+git add . #将本地修改添加至暂存区 git commit -m &amp;#39;注释&amp;#39; #将本地修改从暂存区移动到本地分支 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 3.</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>https://examplesite.com/posts/my-first-post/</link>
+      <pubDate>Mon, 15 Apr 2024 15:39:44 +0800</pubDate>
+      <guid>https://examplesite.com/posts/my-first-post/</guid>
+      <description>## Introduction This is bold text, and this is emphasized text. Visit the Hugo website!</description>
+    </item>
+  </channel>
+</rss>
