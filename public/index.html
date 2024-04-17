@@ -121,6 +121,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/blog01/" class="color-inherit dim link">
+            Windows中使用hugo和Github Pages搭建个人博客（二）
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          [toc]
+1.建立GitHub远程仓库 登录至自己的GitHub账号，建立GitHub Page仓库。 注意：这里的GitHub page的命名格式必须为username.github.io,其中username为GitHub的用户名，即就是Repository name前面的Owner名。
+勾选public，将仓库设置为公开仓库。 勾选Add a README file，设置main分支为仓库的默认主分支。 2.将本地仓库和远程仓库相关联 鼠标右键打开git bash。
+进入至本地仓库目录下，例如我的本地仓库目录为：d:/quickstart
+在quickStart目录下运行git init命令，初始化本地仓库为git仓库 git init 将本地仓库和远程仓库（自己创建的.github.io仓库）相关联。 git remote add origin url (url代表远程仓库的url) 将本地仓库中的内容推送至远程仓库。 注意1：本文档采用同一个远程仓库的两个分支进行hugo仓库的自动部署。设置远程仓库中的source分支为本地仓库的内容，main分支代表要发布的静态网页。
+注意2：git add .之后在Windows平台会出现warning: LF will be replaced by CRLF in .gitmodules.The file will have its original line endings in your working directory，查阅资料之后发现是不同平台下空格表示方式不同，可以不用管。
+注意3：git push时需要本地分支名，本地分支名会显示在git bash界面中当前目录的后面，注意看自己的分支名。
+git add . #将本地修改添加至暂存区 git commit -m &#39;注释&#39; #将本地修改从暂存区移动到本地分支 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 3.
+        </div>
+          <a href="/posts/blog01/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/my-first-post/" class="color-inherit dim link">
             My First Post
             </a>

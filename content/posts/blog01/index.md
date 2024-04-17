@@ -57,17 +57,17 @@ git commit -m '注释' #将本地修改从暂存区移动到本地分支
 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 
 ```
 
-![image-20240416163657579](.\assets\image-20240416163657579.png)
+![image-20240416163657579](./assets/image-20240416163657579.png)
 
 # 3.使用Github Action实现自动部署
 
 1. 点击Settings-->Developer Settings，进入到Developer Settings页面。
 
-![image-20240416165350755](.\assets\image-20240416165350755.png)
+![image-20240416165350755](./assets/image-20240416165350755.png)
 
 2. 点击Personal access tokens --> Token(classic) --> Generate new token --> Generate new token(classic)，进入New personal access token(classic) 页面。
 
-![image-20240416165909820](.\assets\image-20240416165909820.png)
+![image-20240416165909820](./assets/image-20240416165909820.png)
 
 3. 在Note中输入Token名（自己可以随便起，例如hugo-blog），勾选repo和workflow.
 
@@ -77,19 +77,19 @@ git push -u origin master:source #-u选项代表将所推送的远程分支设�
 
 ![image-20240416170321329](./assets/image-20240416170321329.png)
 
-![image-20240416170602214](.\assets\image-20240416170602214.png)
+![image-20240416170602214](./assets/image-20240416170602214.png)
 
 5. 打开远程仓库中的Setting页面，点击Sercrets and variables-->Actions-->New reposiroty secert.
 
-![image-20240417103621284](.\assets\image-20240417103621284.png)
+![image-20240417103621284](./assets/image-20240417103621284.png)
 
 6. 在New repository secret页面中添加步骤4中的Token, 并设置相应的Name（后续需要使用）, 点击Add secret.
 
-![image-20240417104234587](.\assets\image-20240417104234587.png)
+![image-20240417104234587](./assets/image-20240417104234587.png)
 
 7. 在本地仓库quickstart目录下新建.github/workflows/main.yml文件（.github和workflows均为目录）。
 
-![image-20240417105504777](.\assets\image-20240417105504777.png)
+![image-20240417105504777](./assets/image-20240417105504777.png)
 
 8. 按照个人信息修改如下所示的main.yml文件（主要修改branches和personal_token），并填充至自己新建的main.yml文件中。
 
@@ -144,4 +144,4 @@ git push origin master:source
 
 10. 打开域名`https://username.github.io`(username更换为自己的username) 进行查看。
 
-![image-20240417113022906](.\assets\image-20240417113022906.png)
+![image-20240417113022906](./assets/image-20240417113022906.png)
