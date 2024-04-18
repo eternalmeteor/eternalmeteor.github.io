@@ -7,7 +7,7 @@ draft = false
 
 
 
-# 1.建立GitHub远程仓库
+## 1.建立GitHub远程仓库
 
 1. 登录至自己的GitHub账号，建立GitHub Page仓库。
 
@@ -16,17 +16,17 @@ draft = false
 2. 勾选public，将仓库设置为公开仓库。
 3. 勾选`Add a README file`，设置main分支为仓库的默认主分支。
 
-![image-20240416152858695](./assets/image-20240416152858695.png)
+![image-20240416152858695](./assets/image-20240416152858695.png#center)
 
-# 2.将本地仓库和远程仓库相关联
+## 2.将本地仓库和远程仓库相关联
 
 1. 在菜单栏中搜索`git bash`并打开。
 
-![image-20240417164216492](./assets/image-20240417164216492.png)
+![image-20240417164216492](./assets/image-20240417164216492.png#center)
 
 2. 进入至本地仓库目录下，例如我的本地仓库目录为：`d:/quickstart`
 
-![image-20240416160706999](./assets/image-20240416160706999.png#center)
+![image-20240416160706999](./assets/image-20240416160706999.png#center#center)
 
 3. 在quickStart目录下运行`git init`命令，初始化本地仓库为git仓库
 
@@ -40,7 +40,7 @@ git init
 git remote add origin url (url代表远程仓库的url)
 ```
 
-![image-20240416161312921](./assets/image-20240416161312921.png)
+![image-20240416161312921](./assets/image-20240416161312921.png#center)
 
 5. 将本地仓库中的内容推送至远程仓库。
 
@@ -51,7 +51,7 @@ The file will have its original line endings in your working directory`，查阅
 
 **注意3：`git push`时需要本地分支名，本地分支名会显示在git bash界面中当前目录的后面，注意看自己的分支名。**
 
-![image-20240416163302671](./assets/image-20240416163302671.png)
+![image-20240416163302671](./assets/image-20240416163302671.png#center)
 
 ```shell
 git add . #将本地修改添加至暂存区
@@ -59,39 +59,39 @@ git commit -m '注释' #将本地修改从暂存区移动到本地分支
 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 
 ```
 
-![image-20240416163657579](./assets/image-20240416163657579.png)
+![image-20240416163657579](./assets/image-20240416163657579.png#center)
 
-# 3.使用Github Action实现自动部署
+## 3.使用Github Action实现自动部署
 
 1. 点击Settings-->Developer Settings，进入到Developer Settings页面。
 
-![image-20240416165350755](./assets/image-20240416165350755.png)
+![image-20240416165350755](./assets/image-20240416165350755.png#center)
 
 2. 点击Personal access tokens --> Token(classic) --> Generate new token --> Generate new token(classic)，进入New personal access token(classic) 页面。
 
-![image-20240416165909820](./assets/image-20240416165909820.png)
+![image-20240416165909820](./assets/image-20240416165909820.png#center)
 
 3. 在Note中输入Token名（自己可以随便起，例如hugo-blog），勾选repo和workflow.
 
-![image-20240416170305054](./assets/image-20240416170305054.png)
+![image-20240416170305054](./assets/image-20240416170305054.png#center)
 
 4. 点击页面底部的Generate token产生Token，**敲重点：记录以ghp开头的一串代码，后续步骤需要使用。**
 
-![image-20240416170321329](./assets/image-20240416170321329.png)
+![image-20240416170321329](./assets/image-20240416170321329.png#center)
 
-![image-20240416170602214](./assets/image-20240416170602214.png)
+![image-20240416170602214](./assets/image-20240416170602214.png#center)
 
 5. 打开远程仓库中的Setting页面，点击Sercrets and variables-->Actions-->New reposiroty secert.
 
-![image-20240417103621284](./assets/image-20240417103621284.png)
+![image-20240417103621284](./assets/image-20240417103621284.png#center)
 
 6. 在New repository secret页面中添加步骤4中的Token, 并设置相应的Name（后续需要使用）, 点击Add secret.
 
-![image-20240417104234587](./assets/image-20240417104234587.png)
+![image-20240417104234587](./assets/image-20240417104234587.png#center)
 
 7. 在本地仓库quickstart目录下新建.github/workflows/main.yml文件（.github和workflows均为目录）。
 
-![image-20240417105504777](./assets/image-20240417105504777.png)
+![image-20240417105504777](./assets/image-20240417105504777.png#center)
 
 8. 按照个人信息修改如下所示的main.yml文件（主要修改branches和personal_token），并填充至自己新建的main.yml文件中。
 
@@ -146,4 +146,4 @@ git push origin master:source
 
 10. 打开域名`https://username.github.io`(username更换为自己的username) 进行查看。
 
-![image-20240417113022906](./assets/image-20240417113022906.png)
+![image-20240417113022906](./assets/image-20240417113022906.png#center)
