@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.124.1</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 15 Apr 2024 20:48:20 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2024 19:53:50 +0800</lastBuildDate>
     <atom:link href="https://eternalmeteor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://eternalmeteor.github.io/posts/test/</link>
+      <pubDate>Thu, 18 Apr 2024 19:53:50 +0800</pubDate>
+      <guid>https://eternalmeteor.github.io/posts/test/</guid>
+      <description>test。。。。。</description>
+    </item>
     <item>
       <title>Windows中使用hugo和Github Pages搭建个人博客（二）</title>
       <link>https://eternalmeteor.github.io/posts/blog01/</link>
