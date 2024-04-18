@@ -5,8 +5,6 @@ draft = false
 
 +++
 
-
-
 ## 1.建立GitHub远程仓库
 
 1. 登录至自己的GitHub账号，建立GitHub Page仓库。

@@ -28,7 +28,7 @@ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git t
 3. 在博客所在目录下添加config.yml文件，同时删除hugo.toml文件或者将其重命名为hugo.toml.bak。
 
 ```yml
-baseURL: "https://eternalmeteor.github.io/"
+baseURL: "https://eternalmeteor.github.io/"  #这里需要更换为自己的url
 title: ExampleSite
 paginate: 5
 theme: PaperMod
@@ -174,11 +174,11 @@ markup:
 
 4. 在[Google fonts](https://fonts.google.com/)中找到自己喜欢的字体，下载。这里以[Numito](https://fonts.google.com/specimen/Nunito)为例，点击右上角的get font进行下载。
 
-![image-20240418155614069](D:\quickstart\content\posts\hugo-blog03\assets\image-20240418155614069.png)
+![image-20240418155614069](./assets/image-20240418155614069.png#center)
 
 5. 将下载的文件夹中的ttf文件解压之后防止在博客根目录下的static/fonts/文件夹下（没有fonts文件夹就自己新建一个），这里以quickstart目录为例，如下图。
 
-![image-20240418155922317](D:\quickstart\content\posts\hugo-blog03\assets\image-20240418155922317.png)
+![image-20240418155922317](./assets/image-20240418155922317.png#center)
 
 6. 在quickstart/themes/PaperMod/assets/extended目录下新建文件fonts.css，填充以下代码引用字体
 
@@ -205,19 +205,77 @@ body {
 
 ## 2.建立自动化脚本，合并多条命令为一条命令。
 
-1. 在博客根目录下（这里以quickstart目录为例）新建文件`deploy.sh`，填充以下内容
+1. 在博客根目录下（这里以quickstart目录为例）新建文件`deploy.py`，填充以下内容
+
+```python
+import subprocess
+import datetime
+
+# 添加所有修改
+subprocess.run(["git", "add", "."], check = True)
+
+# 设置提交说明，格式为 Site updated: 2006-01-02 15:04:05
+current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+commit_message = "Site updated: " + current_time
+print(commit_message)
+
+# 提交
+subprocess.run(["git", "commit", "-m", commit_message], check = True)
+
+# 推送到master分支上，并设置为追踪source分支
+subprocess.run(["git", "push", "-u", "origin", "master:source"], check = True)
+```
+
+2. 在本地仓库中直接运行`python deploy.py`进行博客的更新。
+
+```shell
+python deploy.py
+```
+
+![image-20240418191110269](./assets/image-20240418191110269.png#center)
+
+## 3.更换设备之后，如果快速给博客增添新的文章
+
+1. 拉取最新代码，-b代表自己的分支名（这里以source为例），url代表远程仓库地址，--recurse-submodules代表递归拉取仓库中所包含的子模块。
+
+```shell
+git clone -b source url --recurse-submodules
+eg: git clone -b source https://github.com/username/username.github.io.git --recurse-submodules
+```
+
+2. 修改本地分支名为master（这里主要是为了方便使用`deploy.py`脚本）
+
+```shell
+git branch -m master
+```
+
+3. 使用hugo创建新文章test.md，打开test.md添加内容。
+
+```shell
+hugo new posts/test.md
+```
+
+4. 上传至远程仓库，在`deploy.py`脚本目录下运行`python deploy.py`
+
+```
+python deploy.py 
+```
+
+OK！！！到此，一个新的博客基本建立完成，后续就是自己的diy部分了。
 
 
 
+**本系列参考文章**：
 
+[hugo官网教程]([Windows | Hugo (gohugo.io)](https://gohugo.io/installation/windows/))
 
+[利用 Hugo 和 Github Pages 创建静态博客并实现自动部署](https://www.yuweihung.com/posts/2021/hugo-github-pages-blog/)
 
+[将Hugo静态网站部署到Github Pages]([将Hugo静态网站部署到Github Pages - Simumis](https://simumis.com/posts/deploy-to-github/#53创建-actions))
 
+[[[置顶\] hugo博客搭建 | PaperMod主题 | Sulv's Blog (sulvblog.cn)](https://www.sulvblog.cn/posts/blog/build_hugo/)]([[置顶\] hugo博客搭建 | PaperMod主题 | Sulv's Blog (sulvblog.cn)](https://www.sulvblog.cn/posts/blog/build_hugo/))
 
-
-
-
-
+[如何用 GitHub Pages + Hugo 搭建个人博客]([如何用 GitHub Pages + Hugo 搭建个人博客 · 小绵尾巴 (cuttontail.blog)](https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/#5-使用-hugo-创建网站))
 
 
 
