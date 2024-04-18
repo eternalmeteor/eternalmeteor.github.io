@@ -10,9 +10,22 @@
       <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.124.1</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 15 Apr 2024 20:48:20 +0800</lastBuildDate>
+    <language>zh</language>
+    <lastBuildDate>Wed, 17 Apr 2024 16:51:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中使用hugo和Github Pages搭建个人博客（三）</title>
+      <link>http://localhost:1313/posts/hugo-blog03/</link>
+      <pubDate>Wed, 17 Apr 2024 16:51:26 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hugo-blog03/</guid>
+      <description>1.修改博客的主题，调整字体。
+2.建立自动化脚本，合并多条命令为一条命令。
+3.更换设备之后，如果快速给博客增添新的文章。
+1.修改博客主题，调整字体 本文选取hugo-PaperMod作为主题，当然你可以从hugo-themes选取其他主题进行使用。
+打开Powershell，进入到博客所在目录下。（以D:/quickstart目录为例）
+使用git submodule方式安装PaperMod主题。
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod 在博客所在目录下添加config.yml文件，同时删除hugo.toml文件或者将其重命名为hugo.toml.bak。 baseURL: &amp;#34;https://examplesite.com/&amp;#34; title: ExampleSite paginate: 5 theme: PaperMod enableRobotsTXT: true buildDrafts: false buildFuture: false buildExpired: false minify: disableXML: true minifyOutput: true params: env: production # to enable google analytics, opengraph, twitter-cards and schema. title: ExampleSite description: &amp;#34;ExampleSite description&amp;#34; keywords: [Blog, Portfolio, PaperMod] author: Me # author: [&amp;#34;Me&amp;#34;, &amp;#34;You&amp;#34;] # multiple authors images: [&amp;#34;&amp;lt;link or path of image for opengraph, twitter-cards&amp;gt;&amp;#34;] DateFormat: &amp;#34;January 2, 2006&amp;#34; defaultTheme: auto # dark, light disableThemeToggle: false ShowReadingTime: true ShowShareButtons: true ShowPostNavLinks: true ShowBreadCrumbs: true ShowCodeCopyButtons: false ShowWordCount: true ShowRssButtonInSectionTermList: true UseHugoToc: true disableSpecial1stPost: false disableScrollToTop: false comments: false hidemeta: false hideSummary: false showtoc: false tocopen: false assets: # disableHLJS: true # to disable highlight.</description>
+    </item>
     <item>
       <title>Windows中使用hugo和Github Pages搭建个人博客（二）</title>
       <link>http://localhost:1313/posts/blog01/</link>

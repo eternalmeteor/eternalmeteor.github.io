@@ -26,7 +26,7 @@ draft = false
 
 2. 进入至本地仓库目录下，例如我的本地仓库目录为：`d:/quickstart`
 
-![image-20240416160706999](./assets/image-20240416160706999.png)
+![image-20240416160706999](./assets/image-20240416160706999.png#center)
 
 3. 在quickStart目录下运行`git init`命令，初始化本地仓库为git仓库
 
