@@ -11,32 +11,31 @@
     </image>
     <generator>Hugo -- 0.124.1</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 18 Apr 2024 19:53:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2024 16:51:26 +0800</lastBuildDate>
     <atom:link href="https://eternalmeteor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>https://eternalmeteor.github.io/posts/test/</link>
-      <pubDate>Thu, 18 Apr 2024 19:53:50 +0800</pubDate>
-      <guid>https://eternalmeteor.github.io/posts/test/</guid>
-      <description>test。。。。。</description>
+      <title>Windows中使用hugo和Github Pages搭建个人博客（三）</title>
+      <link>https://eternalmeteor.github.io/posts/windows%E4%B8%AD%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</link>
+      <pubDate>Wed, 17 Apr 2024 16:51:26 +0800</pubDate>
+      <guid>https://eternalmeteor.github.io/posts/windows%E4%B8%AD%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%89/</guid>
+      <description>1.修改博客的主题，调整字体。
+2.建立自动化脚本，合并多条命令为一条命令。
+3.更换设备之后，如果快速给博客增添新的文章。
+1.修改博客主题，调整字体 本文选取hugo-PaperMod作为主题，当然你可以从hugo-themes选取其他主题进行使用。
+打开Powershell，进入到博客所在目录下。（以D:/quickstart目录为例）
+使用git submodule方式安装PaperMod主题。
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod 在博客所在目录下添加config.yml文件，同时删除hugo.toml文件或者将其重命名为hugo.toml.bak。 baseURL: &amp;#34;https://eternalmeteor.github.io/&amp;#34; #这里需要更换为自己的url title: ExampleSite paginate: 5 theme: PaperMod languageCode: zh defaultContentLanguage: zh enableRobotsTXT: true buildDrafts: false buildFuture: false buildExpired: false minify: disableXML: true minifyOutput: true params: customCSS: [&amp;#34;styles.css&amp;#34;] env: production # to enable google analytics, opengraph, twitter-cards and schema. title: ExampleSite description: &amp;#34;ExampleSite description&amp;#34; keywords: [Blog, Portfolio, PaperMod] author: Me # author: [&amp;#34;Me&amp;#34;, &amp;#34;You&amp;#34;] # multiple authors images: [&amp;#34;&amp;lt;link or path of image for opengraph, twitter-cards&amp;gt;&amp;#34;] DateFormat: &amp;#34;January 2, 2006&amp;#34; defaultTheme: auto # dark, light disableThemeToggle: false ShowReadingTime: true ShowShareButtons: true ShowPostNavLinks: true ShowBreadCrumbs: true ShowCodeCopyButtons: false ShowWordCount: true ShowRssButtonInSectionTermList: true UseHugoToc: true disableSpecial1stPost: false disableScrollToTop: false comments: false hidemeta: false hideSummary: false showtoc: true tocopen: false assets: # disableHLJS: true # to disable highlight.</description>
     </item>
     <item>
       <title>Windows中使用hugo和Github Pages搭建个人博客（二）</title>
-      <link>https://eternalmeteor.github.io/posts/blog01/</link>
+      <link>https://eternalmeteor.github.io/posts/windows%E4%B8%AD%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</link>
       <pubDate>Mon, 15 Apr 2024 20:48:20 +0800</pubDate>
-      <guid>https://eternalmeteor.github.io/posts/blog01/</guid>
+      <guid>https://eternalmeteor.github.io/posts/windows%E4%B8%AD%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</guid>
       <description>1.建立GitHub远程仓库 登录至自己的GitHub账号，建立GitHub Page仓库。 注意：这里的GitHub page的命名格式必须为username.github.io,其中username为GitHub的用户名，即就是Repository name前面的Owner名。
 勾选public，将仓库设置为公开仓库。 勾选Add a README file，设置main分支为仓库的默认主分支。 2.将本地仓库和远程仓库相关联 在菜单栏中搜索git bash并打开。 进入至本地仓库目录下，例如我的本地仓库目录为：d:/quickstart 在quickStart目录下运行git init命令，初始化本地仓库为git仓库 git init 将本地仓库和远程仓库（自己创建的.github.io仓库）相关联。 git remote add origin url (url代表远程仓库的url) 将本地仓库中的内容推送至远程仓库。 注意1：本文档采用同一个远程仓库的两个分支进行hugo仓库的自动部署。设置远程仓库中的source分支为本地仓库的内容，main分支代表要发布的静态网页。
 注意2：git add .之后在Windows平台会出现warning: LF will be replaced by CRLF in .gitmodules. The file will have its original line endings in your working directory，查阅资料之后发现是不同平台下空格表示方式不同，可以不用管。
 注意3：git push时需要本地分支名，本地分支名会显示在git bash界面中当前目录的后面，注意看自己的分支名。
 git add . #将本地修改添加至暂存区 git commit -m &amp;#39;注释&amp;#39; #将本地修改从暂存区移动到本地分支 git push -u origin master:source #-u选项代表将所推送的远程分支设置本地分支的上游，后续可以无须指定，相当于缓存了一簇推送设置，master代表本地分支名，source代表远程分支名。 3.使用Github Action实现自动部署 点击Settings&amp;ndash;&amp;gt;Developer Settings，进入到Developer Settings页面。 点击Personal access tokens &amp;ndash;&amp;gt; Token(classic) &amp;ndash;&amp;gt; Generate new token &amp;ndash;&amp;gt; Generate new token(classic)，进入New personal access token(classic) 页面。 在Note中输入Token名（自己可以随便起，例如hugo-blog），勾选repo和workflow.</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://eternalmeteor.github.io/posts/my-first-post/</link>
-      <pubDate>Mon, 15 Apr 2024 15:39:44 +0800</pubDate>
-      <guid>https://eternalmeteor.github.io/posts/my-first-post/</guid>
-      <description>## Introduction This is bold text, and this is emphasized text. Visit the Hugo website!</description>
     </item>
   </channel>
 </rss>
