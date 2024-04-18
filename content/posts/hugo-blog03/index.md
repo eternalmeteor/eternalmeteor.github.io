@@ -28,10 +28,12 @@ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git t
 3. 在博客所在目录下添加config.yml文件，同时删除hugo.toml文件或者将其重命名为hugo.toml.bak。
 
 ```yml
-baseURL: "https://examplesite.com/"
+baseURL: "https://eternalmeteor.github.io/"
 title: ExampleSite
 paginate: 5
 theme: PaperMod
+languageCode: zh
+defaultContentLanguage: zh
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -43,6 +45,7 @@ minify:
   minifyOutput: true
 
 params:
+  customCSS: ["styles.css"]
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: ExampleSite
   description: "ExampleSite description"
@@ -67,8 +70,10 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
+
+  
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -195,6 +200,12 @@ body {
     font-family: Nunito-Italic-VariableFont_wght, Nunito-VariableFont_wght;
 } 
 ```
+
+恭喜你，到这一步基本就完成了，接下来可以自己修改config.yml文件进行diy，可以参考本文最后的参考链接进行。
+
+## 2.建立自动化脚本，合并多条命令为一条命令。
+
+1. 在博客根目录下（这里以quickstart目录为例）新建文件`deploy.sh`，填充以下内容
 
 
 
